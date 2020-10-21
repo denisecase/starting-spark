@@ -80,7 +80,7 @@ wordCounts.collect()
 - Resilient Distributed Dataset (RDD) - a distributed collection of items
 - RDD actions (return values)
 - RDD transformations (return pointers to new RDD)
-- Data
+- RDD transformations list ([link](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations))
 
 
 ## Resources
