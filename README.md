@@ -25,6 +25,60 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 1. In PS as Admin, run pyspark to launch Spark with Python.  You should get a Python prompt >>>.
 1. Quit a Python window with the quit() function. 
 
+## Code
+
+Create a new RDD from an existing file. Use common textFile functions.
+
+Implement word count. 
+
+- map - one in to one out
+- reduce - all in, one out
+- filter - some in to some or less or zero out
+- flatMap - one in to many out
+- reduceByKey - many in, one out 
+
+```scala
+val textFile = sc.textFile("README.md")
+textFile.count()
+textFile.first()
+val linesWithSpark = textFile.filter(line => line.contains("Spark"))
+val ct = textFile.filter(line => line.contains("Spark")).count()
+```
+
+Find the line with the most words. All data in -> one out. 
+
+1. First, map each line to words and get the size. 
+1. Then, reduce all sizes to one max value. 
+
+Which functions should we use?  Which version do you prefer?
+
+```scala
+textFile.map(line => line.split(" ").size).reduce((a, b) => if (a > b) a else b)
+textFile.map(line => line.split(" ").size).reduce((a, b) => Math.max(a, b))
+```
+
+## MapReduce in Spark
+
+1. First, flatMap each line to words. 
+1. Then, map each word to a count (one). 
+1. Then, reduceByKey to aggregate a total for each key. 
+1. After transformations, use an action (e.g. collect) to collect the results to our shell. 
+
+Can you modify to get max by key? 
+
+Can you modify to get max by key? 
+
+```scala
+val wordCounts = textFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
+wordCounts.collect()
+```
+
+## Terms
+
+- Resilient Distributed Dataset (RDD) - a distributed collection of items
+- RDD actions (return values)
+- RDD transformations (return pointers to new RDD)
+- Data
 
 
 ## Resources
