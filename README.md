@@ -27,7 +27,9 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 
 
 
-## Try Online
+## Resources
 
-- <https://databricks.com/>
+- Try Spark Quick Start at <https://spark.apache.org/docs/2.1.0/quick-start.html>
+- Try Spark examples at <https://spark.apache.org/examples.html>
+- Try Spark online with Databricks at <https://databricks.com/>
 
