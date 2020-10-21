@@ -55,6 +55,8 @@ Which functions should we use?  Which version do you prefer?
 ```scala
 textFile.map(line => line.split(" ").size).reduce((a, b) => if (a > b) a else b)
 textFile.map(line => line.split(" ").size).reduce((a, b) => Math.max(a, b))
+
+val maxWords = textFile.map(line => line.split(" ").size).reduce((a, b) => if (a > b) a else b)
 ```
 
 ## MapReduce in Spark
