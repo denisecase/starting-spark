@@ -1,54 +1,30 @@
 # setup-spark
 
-> Set up Spark and related tools on Windows
+> Set up Spark on Windows
 
 ## Set up Tools
 
-- [Set up Basic Tools for Windows Development](https://github.com/denisecase/basic-tools-for-webdev)
+- [Basic Setup for Big Data](https://github.com/denisecase/basic-setup-for-bigdata)
 
-## Choco Installs
-
-Open Powershell as Administrator and run the following commands to install a variety of big data tools on Windows. 
-
-```Powershell
-
-choco install jdk8 -y
-choco install solr -y
-choco install hadoop -y
-choco install sbt -y
-choco install python -y
-choco install flink -y
-
-```
-
-Periodically, you may need the following command to update the environment.
-
-```Powershell
-refreshenv
-```
-
-Update your packages as needed.
-
-```Powershell
-choco upgrade all -y
-```
+Questions? See [Big Data Developers](https://github.com/denisecase/big-data-developers)
 
 ## Install Spark
 
-- [Download Apache Spark](https://spark.apache.org/downloads.html)
-- Download the most recent version. Verify integrity. Use 7-zip to expand (including the docs)
-- Move the spark_* folder to c:\
+Spark is written in Scala (a new language for the JVM), but you can interact with it using Scala - or Python. 
 
-## Install Kafka (includes simple Zookeeper)
+1. Read: <https://spark.apache.org/>
+1. Download: <https://spark.apache.org/downloads.html>
+1. Extract to C:\ using 7-zip (extract to the recommended folder  name), then extract the tar file and verify your path.
+1. Prereqs: We already have JDK 8, winutils.exe, Hadoop (and HDFS), and we've learned how to set system environment variables for HADOOP and JAVA. 
+1. Set System Environment Variables:
+- SPARK_HOME = C:\<your spark path> (e.g., C:\spark-3.0.1-bin-hadoop2.7)
+- Path - add %SPARK_HOME%\bin
+1. In PS as Admin, run spark-shell to launch Spark with Scala (you should get a scala prompt)
+1. In a browser, open <http://localhost:4040/> to see the Spark shell web UI
+1. Exit spark shell with CTRL-D (for "done")
+1. In PS as Admin, run pyspark to launch Spark with Python.  You should get a Python prompt >>>.
+1. Quit a Python window with the quit() function. 
 
-- [Kafka Quickstart](https://kafka.apache.org/quickstart)
-- Download the most recent version. Verify integrity. Use 7-zip to expand (including the docs)
-- Move the kafka_* folder to c:\
-
-## Set/Verify Environment Variables
-
-- Set and verify environment variables
-- Update and verify path
 
 
 
