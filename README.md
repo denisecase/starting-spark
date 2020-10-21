@@ -45,7 +45,7 @@ val linesWithSpark = textFile.filter(line => line.contains("Spark"))
 val ct = textFile.filter(line => line.contains("Spark")).count()
 ```
 
-Find the line with the most words. All data in -> one out. 
+Find the most words in a single line. All data in -> one out. 
 
 1. First, map each line to words and get the size. 
 1. Then, reduce all sizes to one max value. 
