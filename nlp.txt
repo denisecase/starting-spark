@@ -56,8 +56,8 @@ nod_kvRDD = nod_tokensRDD.map(lambda w: (w,1))
 # reduce by key (sum the counts)
 word_countsRDD = nod_kvRDD.reduceByKey(lambda x,y: x+y)
 
-# take the top 20 words by key (second in the tuple)
-nod_top_list = word_countsRDD.takeOrdered(20,lambda t: -t[1])
+# take the top 5 words by key (second in the tuple)
+nod_top_list = word_countsRDD.takeOrdered(5,lambda t: -t[1])
 
 # collect the results and print
 print(nod_top_list)
@@ -129,6 +129,8 @@ messyWordsRDD = sc.parallelize(list_in)
 
 # ----------------------- flatmap to words
 nod_tokensRDD = messyWordsRDD.flatMap(lambda line: line.strip().split(" "))
+print(nod_tokensRDD.collect())
+
 
 # ----------------------- clean out non-letters (ONLY)
 
