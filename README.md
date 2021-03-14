@@ -24,14 +24,6 @@ java --version
 python --version
 ```
 
-## Install PySpark (Anaconda)
-
-- Follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
-
-```Anaconda
-conda install -c conda-forge pyspark
-```
-
 ## Install Spark
 
 Spark is written in Scala (a new language for the JVM), but you can interact with it using Scala - or Python. 
@@ -122,6 +114,14 @@ wordCounts.collect()
 ```
 
 ---
+
+## If needed, install PySpark (Anaconda)
+
+- /bin includes pyspark. If you need another, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
+
+```Anaconda
+conda install -c conda-forge pyspark
+```
 
 ## Terms
 
