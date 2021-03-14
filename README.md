@@ -105,7 +105,7 @@ textFile.map(line => line.split(" ").size).reduce((a, b) => Math.max(a, b))
 val maxWords = textFile.map(line => line.split(" ").size).reduce((a, b) => if (a > b) a else b)
 ```
 
-## MapReduce in Spark
+### MapReduce in Spark & Scala
 
 1. First, flatMap each line to words. 
 1. Then, map each word to a count (one). 
@@ -120,6 +120,8 @@ Can you modify to get max by key?
 val wordCounts = textFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
 wordCounts.collect()
 ```
+
+---
 
 ## Terms
 
