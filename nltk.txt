@@ -1,0 +1,18 @@
+# Spark Python notebook with Natural Language Processing
+
+# -------------- Options
+
+# Natural Language Toolkit (NLTK) - extensive toolkit for NLP techniques, includes stopwords
+# TextBlob - extends NLTK and Pattern
+# SparkNLP - sentence detection, tokenizing, stemming, lemmatization, POS, NER, parse, text, date, chunking, spelling, sentiment, pretrained/training models
+
+# ------------------- Install NLTK for Stopwords
+
+%sh 
+pip install nltk
+pip install --upgrade pip
+python -m nltk.downloader all
+
+# ----------------------
+
+from nltk.corpus import stopwords
