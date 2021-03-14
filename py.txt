@@ -1,0 +1,23 @@
+# Create a new Python notebook in Databricks
+# shortcuts:
+#   SHIFT + ENTER to run
+#   CTRL SHIFT P brings up print dialog
+# 
+
+print("hello")
+print(2+4)
+x = ["hello","big", "data", "world"]
+
+print(x)
+
+print(map(lambda i:len(i),x))
+
+# oops - cast the iterable object to a list
+print(list(map(lambda i:len(i),x)))
+
+# or use the iterable unpacking operator, * (** for dict)
+print(*map(lambda i:len(i),x))
+
+# iterate over the iterable
+for s in map(lambda i: len(i),x):
+  print(s)
