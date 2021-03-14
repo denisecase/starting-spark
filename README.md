@@ -62,7 +62,16 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 
 If you see a WARN about trying to compute pageszie, just hit ENTER. This command works in Linux, but not in Windows. 
 
-## Code
+---
+
+## Experiment with Spark & Python
+
+- [First Steps With PySpark and Big Data Processing
+by Luke Lee](https://realpython.com/pyspark-intro/)
+
+---
+
+## Experiment with Spark & Scala
 
 Create a new RDD from an existing file. Use common textFile functions.
 
