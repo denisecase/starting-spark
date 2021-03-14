@@ -1,0 +1,26 @@
+# ------------------ Generate chart from list with matplotlib and seaborn (sns)
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# We already have a list of tuples after processing
+# This generates the same data structure using only Python
+from collections import Counter
+text = 'One fish two fish red fish blue fish'
+word_list = text.lower().split()
+#print(word_list)
+word_count_tuples_list = Counter(word_list).most_common()
+print(word_count_tuples_list)
+
+source = 'One Fish Two Fish'
+title = 'Top Words in ' + source
+xlabel = 'word'
+ylabel = 'count'
+
+df = pd.DataFrame.from_records(word_count_tuples_list, columns =[xlabel, ylabel]) 
+print(df)
+
+plt.figure(figsize=(10,3))
+sns.barplot(xlabel, ylabel, data=df, palette="Blues_d").set_title(title)
