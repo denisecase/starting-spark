@@ -46,7 +46,7 @@ print(reduce(lambda acc,i: acc+len(i), x, 0) )
 #---------------- Spark RDD map-reduce
 
 rdd = sc.parallelize(x,4)
-print type(rdd)
+print(type(rdd))
 
 # map to intermediate key-value pairs
 kv = rdd.map(lambda w: (w,1))
