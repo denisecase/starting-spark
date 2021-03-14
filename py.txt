@@ -21,3 +21,14 @@ print(*map(lambda i:len(i),x))
 # iterate over the iterable
 for s in map(lambda i: len(i),x):
   print(s)
+  
+# filter
+print(*filter(lambda i:len(i)>3, x))
+
+# filter and sort
+print(*sorted(filter(lambda i:len(i)>3, x)) )
+
+# filter, sort, count
+print( len(sorted(filter(lambda i:len(i)>3, x)) ))
+
+
