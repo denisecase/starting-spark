@@ -136,4 +136,5 @@ conda install -c conda-forge pyspark
 - Try Spark Quick Start at <https://spark.apache.org/docs/2.1.0/quick-start.html>
 - Try Spark examples at <https://spark.apache.org/examples.html>
 - Try Spark online with Databricks at <https://databricks.com/>
+- Free Spark Databricks Community Edition at <https://community.cloud.databricks.com/login.html>
 - [Learning Spark v2 (includes Spark 3)](https://github.com/databricks/LearningSparkV2)
