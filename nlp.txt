@@ -1,18 +1,159 @@
-# Spark Python notebook with Natural Language Processing
+# Spark Python notebook with Cleaning, Processing, Charting
+#
+# Cleaning
+#   NLP Stopword removal
+#   non-letter characters
 
+# Processing
+#    Flat map (1 to many)
+#       lower()
+#       strip()
+#       split(' ')
+#    Map (1 to 1)
+#    Filter
+#    Reduce (key, aggregate value)
+
+# RDD / DataFrame / DataSet (Python vs Scala)
+
+# Charting with matplotlib and Seaborn (extends matplotlib)
+
+#
 # -------------- Options
 
-# Natural Language Toolkit (NLTK) - extensive toolkit for NLP techniques, includes stopwords
-# TextBlob - extends NLTK and Pattern
 # SparkNLP - sentence detection, tokenizing, stemming, lemmatization, POS, NER, parse, text, date, chunking, spelling, sentiment, pretrained/training models
 
-# ------------------- Install NLTK for Stopwords
+# -----------  Get Stopwords (words generally removed from analysis, e.g. "the")
 
-%sh 
-pip install nltk
-pip install --upgrade pip
-python -m nltk.downloader all
+from pyspark.ml.feature import StopWordsRemover
 
-# ----------------------
+# Define a list of stop words or use default list
+remover = StopWordsRemover()
+stopwords = remover.getStopWords() 
 
-from nltk.corpus import stopwords
+# Display default list
+stopwords[:10]
+
+# --------------------- URL Text to RDD (Python) 
+
+import urllib.request
+
+urllib.request.urlretrieve("https://raw.githubusercontent.com/denisecase/setup-spark/master/data/nod.txt","/tmp/nod.txt")
+dbutils.fs.mv("file:/tmp/nod.txt","dbfs:/data/nod.txt")
+
+nod_rdd = sc.textFile("dbfs:/data/nod.txt", 4)
+print (type(nod_rdd))
+
+# ------------------------ Process the text (Word Count)
+
+import re
+
+# flat map each line to words - strip, split
+nod_tokensRDD = nod_rdd.flatMap(lambda line: line.strip().split(" "))
+
+# map to intermediate key-value pairs
+nod_kvRDD = nod_tokensRDD.map(lambda w: (w,1))
+
+# reduce by key (sum the counts)
+word_countsRDD = nod_kvRDD.reduceByKey(lambda x,y: x+y)
+
+# take the top 20 words by key (second in the tuple)
+nod_top_list = word_countsRDD.takeOrdered(20,lambda t: -t[1])
+
+# collect the results and print
+print(nod_top_list)
+
+# ------------ Cleaning examples - text data
+
+poem = '''
+Wynken, Blynken, and Nod one night
+    Sailed off in a wooden shoe--
+Sailed on a river of crystal light,
+    Into a sea of dew.
+"Where are you going, and what do you wish?"
+    The old moon asked of the three.
+"We have come to fish for the herring fish
+That live in this beautiful sea;
+Nets of silver and gold have we!"
+                  Said Wynken,
+                  Blynken,
+                  And Nod.
+
+The old moon laughed and sang a song,
+    As they rocked in the wooden shoe,
+And the wind that sped them all night long
+    Ruffled the waves of dew.
+The little stars were the herring fish
+    That lived in that beautiful sea--
+"Now cast your nets wherever you wish--
+    Never afeard are we!"
+    So cried the stars to the fishermen three:
+                  Wynken,
+                  Blynken,
+                  And Nod.
+
+All night long their nets they threw
+   To the stars in the twinkling foam---
+Then down from the skies came the wooden shoe,
+   Bringing the fishermen home;
+'T was all so pretty a sail it seemed
+   As if it could not be,
+And some folks thought 't was a dream they 'd dreamed
+   Of sailing that beautiful sea---
+   But I shall name you the fishermen three:
+                     Wynken,
+                     Blynken,
+                     And Nod.
+
+Wynken and Blynken are two little eyes,
+   And Nod is a little head,
+And the wooden shoe that sailed the skies
+   Is a wee one's trundle-bed.
+So shut your eyes while mother sings
+   Of wonderful sights that be,
+And you shall see the beautiful things
+   As you rock in the misty sea,
+   Where the old shoe rocked the fishermen three:
+                     Wynken,
+                     Blynken,
+                     And Nod.
+'''
+
+# get the multiline literal text into a list - either works....
+list_in = [poem]
+
+# create a RDD for processing in memory 
+messyWordsRDD = sc.parallelize(list_in)
+
+# WARNING: don't usually collect() large input data sets! 
+# print(messyWordsRDD.collect())
+
+# ----------------------- flatmap to words
+nod_tokensRDD = messyWordsRDD.flatMap(lambda line: line.strip().split(" "))
+
+# ----------------------- clean out non-letters (ONLY)
+
+justwordsRDD = nod_tokensRDD.map(lambda w: re.sub(r'[^a-zA-Z]','',w))
+print(justwordsRDD.collect())
+
+# -----------------------  clean out stopwords (ONLY)
+
+goodWordsRDD = nod_tokensRDD.filter(lambda w: w not in stopwords)
+print(goodWordsRDD.collect())
+
+# ------------ More practice
+
+# https://campus.datacamp.com/courses/big-data-fundamentals-with-pyspark/programming-in-pyspark-rdds?ex=14
+
+# ------------------------------  Improve
+
+# flat map each line to words, cast to lower (case) before strip and split
+# clean out non-letters
+# clean out stopwords
+# map to intermediate key-value pairs (word, 1)
+# reduce by key (sum)
+# map again - reverse so count is first
+# take the top n words by key (first in the tuple)
+# print the summary top N list, e.g., print(topList)
+# chart results with matplotlib and seaborn
+
+
