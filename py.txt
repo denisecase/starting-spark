@@ -41,3 +41,27 @@ print(reduce(lambda acc,i: acc+len(i), x) )
 # oops - from the iterator, x, it assumes str
 # set optional initializer to 0 to set type to int - now we can add
 print(reduce(lambda acc,i: acc+len(i), x, 0) )
+
+
+#---------------- Spark RDD map-reduce
+
+rdd = sc.parallelize(x,4)
+print type(rdd)
+
+# map to intermediate key-value pairs
+kv = rdd.map(lambda w: (w,1))
+print(kv.collect())
+
+# reduce by key
+res = kv.reduceByKey(lambda x,y: x+y)
+print(res.collect())
+
+# ---------------- Spark RDD all in one
+from operator import add
+
+print((rdd.map(lambda w: (w,1)).reduceByKey(add).collect()))
+
+
+
+
+
