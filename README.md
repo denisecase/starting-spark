@@ -148,4 +148,5 @@ conda install -c conda-forge pyspark
 - Try Spark online with Databricks at <https://databricks.com/>
 - Free Spark Databricks Community Edition at <https://community.cloud.databricks.com/login.html>
 - Databricks Datasets at <https://docs.databricks.com/data/databricks-datasets.html>
+- "/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv"
 - [Learning Spark v2 (includes Spark 3)](https://github.com/databricks/LearningSparkV2)
