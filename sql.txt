@@ -1,0 +1,43 @@
+-- NOTES
+-- In Jupyter Notebook, click V in upper right of cell
+-- then "Add cell above" or "Add cell below" 
+-----------------------------------------------------------
+
+-- CREATE TABLE
+drop table if exists diamonds;
+create table diamonds using csv options (path "/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", header "true")
+
+-- What columns? 
+DESCRIBE diamonds;
+
+-- Lowest price?
+SELECT min(price) FROM diamonds;
+
+-- Highest price?
+SELECT max(price) FROM diamonds;
+
+-- color, price of most expensive? 
+select color, price from diamonds order by price DESC;
+
+-- find color and average price (REDUCE: for color, find avg(price))
+SELECT color, avg(price) AS price FROM diamonds GROUP BY color ORDER BY color
+
+-- -----------------------------------------------------------------------------
+
+-- switch to python when in a SQL notebook (no space in %python)
+%python
+
+-- create DataFrame
+%python
+diamonds = spark.read.csv("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", header="true", inferSchema="true")
+
+-- find color and average price (REDUCE: for color, find avg(price))
+%python
+from pyspark.sql.functions import avg
+
+display(diamonds.select("color", "price").groupBy("color").agg(avg("price")))
+display(diamonds.select("color", "price").groupBy("color").agg(avg("price")).sort("color"))
+
+
+
+
