@@ -31,4 +31,13 @@ print(*sorted(filter(lambda i:len(i)>3, x)) )
 # filter, sort, count
 print( len(sorted(filter(lambda i:len(i)>3, x)) ))
 
+# reduce
+from functools import reduce
+print(reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]))
 
+# try summing the lengths
+print(reduce(lambda acc,i: acc+len(i), x) )
+
+# oops - from the iterator, x, it assumes str
+# set optional initializer to 0 to set type to int - now we can add
+print(reduce(lambda acc,i: acc+len(i), x, 0) )
