@@ -1,12 +1,21 @@
-# setup-spark
+# Starting Spark
 
-> Set up Spark on Windows
+> Getting started with Spark big data analytics engine
+> 
 
-## Suggested: Set up Tools
+## Recommended: Spark in the Cloud
+
+- [Free Databricks Community Edition](https://community.cloud.databricks.com/login.html)
+
+---
+
+## Optional: Local Installation on Windows
+
+### First, set up Windows machine tools
 
 - [Basic Setup for Big Data](https://github.com/denisecase/basic-setup-for-bigdata)
 
-## Install Prerequisities (included above)
+### Verify Prerequisities are installed (included above)
 
 - JDK
 - Python (Anaconda)
@@ -24,7 +33,7 @@ java --version
 python --version
 ```
 
-## Install Spark
+### Install Spark locally
 
 Spark is written in Scala (a new language for the JVM), but you can interact with it using Scala - or Python. 
 
@@ -39,18 +48,26 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
     - HADOOP_HOME = C:\spark-3.1.1-bin-hadoop2.7
     - Path - add %SPARK_HOME%\bin
 
-## Verify Spark using Scala
+### Verify Spark using Scala
 
 1. In PowerShell as Admin, run ```spark-shell``` to launch Spark with Scala (you should get a scala prompt)
 2. In a browser, open <http://localhost:4040/> to see the Spark shell web UI
 3. Exit spark shell with CTRL-D (for "done")
 
-## Verify Spark using Python
+### If needed, install PySpark (Anaconda)
+
+- /bin includes pyspark. If you need another, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
+
+```Anaconda
+conda install -c conda-forge pyspark
+```
+
+### Verify Spark using Python
 
 1. In PS as Admin, run ```pyspark``` to launch Spark with Python.  You should get a Python prompt >>>.
 2. Quit a Python window with the quit() function. 
 
-## Warnings
+### Warnings
 
 If you see a WARN about trying to compute pageszie, just hit ENTER. This command works in Linux, but not in Windows. 
 
@@ -60,6 +77,16 @@ If you see a WARN about trying to compute pageszie, just hit ENTER. This command
 
 - [First Steps With PySpark and Big Data Processing
 by Luke Lee](https://realpython.com/pyspark-intro/)
+
+---
+
+## Experiment with Spark & Java
+
+Build custom apps using Java. 
+
+```PowerShell
+java -cp target/spark-challenge-1.0.0-jar-with-dependencies.jar edu.nwmissouri.isl.App "data.txt"
+```
 
 ---
 
@@ -114,14 +141,6 @@ wordCounts.collect()
 ```
 
 ---
-
-## If needed, install PySpark (Anaconda)
-
-- /bin includes pyspark. If you need another, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
-
-```Anaconda
-conda install -c conda-forge pyspark
-```
 
 ## Terms
 
