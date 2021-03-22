@@ -84,6 +84,8 @@ by Luke Lee](https://realpython.com/pyspark-intro/)
 
 Build custom apps using Java. 
 
+See <https://github.com/denisecase/spark-maven-java-challenge>
+
 ```PowerShell
 java -cp target/spark-challenge-1.0.0-jar-with-dependencies.jar edu.nwmissouri.isl.App "data.txt"
 ```
