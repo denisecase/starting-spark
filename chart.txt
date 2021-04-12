@@ -5,6 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Explore Seaborn at https://seaborn.pydata.org/
+
 # We already have a list of tuples after processing
 # This generates the same data structure using only Python
 from collections import Counter
