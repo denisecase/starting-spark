@@ -4,25 +4,36 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from collections import Counter
 
-# Explore Seaborn at https://seaborn.pydata.org/
+# Explore NumPy at https://numpy.org/
+# Explore pandas (Python Data Analysis library) at https://pandas.pydata.org/
+# Explore Matplotlib at https://matplotlib.org/
+# Explore Seaborn visualization library at https://seaborn.pydata.org/ (built on Matplotlib)
+# Explore Python collections.Counter at https://docs.python.org/3/library/collections.html#collections.Counter
 
 # We already have a list of tuples after processing
-# This generates the same data structure using only Python
-from collections import Counter
+# Use collect() to get back a Python datastructure
+
+# Get a list of words
 text = 'One fish two fish red fish blue fish'
 word_list = text.lower().split()
 #print(word_list)
+
+# Call the Counter most_common() function to get list of tuples 
 word_count_tuples_list = Counter(word_list).most_common()
 print(word_count_tuples_list)
 
+# prepare chart information
 source = 'One Fish Two Fish'
 title = 'Top Words in ' + source
 xlabel = 'word'
 ylabel = 'count'
 
+# create Pandas dataframe from list of tuples
 df = pd.DataFrame.from_records(word_count_tuples_list, columns =[xlabel, ylabel]) 
 print(df)
 
+# create plot (using matplotlib)
 plt.figure(figsize=(10,3))
 sns.barplot(xlabel, ylabel, data=df, palette="Blues_d").set_title(title)
