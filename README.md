@@ -58,16 +58,14 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 
 ### Verify PySpark (install if needed)
 
-- /bin includes pyspark. If you need another, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
+1. In PS as Admin, run ```pyspark``` to launch Spark with Python.  You should get a Python prompt >>>.
+2. Quit a Python window with the quit() function. 
+
+- /bin includes pyspark. If you don't see a version after the command above, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
 
 ```Anaconda
 conda install -c conda-forge pyspark
 ```
-
-### Verify Spark using Python
-
-1. In PS as Admin, run ```pyspark``` to launch Spark with Python.  You should get a Python prompt >>>.
-2. Quit a Python window with the quit() function. 
 
 ### Warnings
 
