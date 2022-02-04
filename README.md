@@ -52,7 +52,7 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 
 ### Verify Spark using Scala
 
-1. In PowerShell as Admin, run ```spark-shell``` to launch Spark with Scala (you should get a scala prompt)
+1. In PowerShell as Admin, run ```spark-shell``` to launch Spark with Scala (you should get a scala prompt). Be patient - it may take a while. 
 2. In a browser, open <http://localhost:4040/> to see the Spark shell web UI
 3. Exit spark shell with CTRL-D (for "done")
 
