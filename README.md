@@ -56,7 +56,7 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 2. In a browser, open <http://localhost:4040/> to see the Spark shell web UI
 3. Exit spark shell with CTRL-D (for "done")
 
-### If needed, install PySpark (Anaconda)
+### Verify PySpark (install if needed)
 
 - /bin includes pyspark. If you need another, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
 
