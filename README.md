@@ -3,13 +3,15 @@
 > Getting started with Spark big data analytics engine
 > 
 
-## Recommended: Spark in the Cloud
+## Spark in the Cloud
 
-- [Free Databricks Community Edition](https://community.cloud.databricks.com/login.html)
+- Used to recommend [Free Databricks Community Edition](https://community.cloud.databricks.com/login.html). 
+- Now it looks like they require a credit card after 14 days. 
+- Looking for a truly free way to experiment for students. 
 
 ---
 
-## Optional: Local Installation on Windows
+## Preferred: Local Installation on Windows
 
 ### First, set up Windows machine tools
 
@@ -17,13 +19,13 @@
 
 ### Verify Prerequisities are installed (included above)
 
-- JDK
-- Python (Anaconda)
+- JDK 8 or better
+- Python (includied with Miniconda or Anaconda) 
 
 ```PowerShell
 choco install openjdk -y
 choco install 7zip -y
-choco install anaconda3 --params="/AddToPath:1" -y
+choco install miniconda3 --params="/AddToPath:1" -y
 ```
 
 Verify:
@@ -40,12 +42,12 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 1. Read: <https://spark.apache.org/>
 2. Download Spark: <https://spark.apache.org/downloads.html> (e.g., to Downloads folder).
 3. Use 7zip to extract, extract again. 
-4. Move so you have C:\spark-3.1.1-bin-hadoop2.7\bin
-5. Download winutils from https://github.com/cdarlint/winutils/tree/master/hadoop-2.7.7/bin into spark bin folder.
+4. Move so you have C:\spark-3.2.1-bin-hadoop3.2\bin
+5. Download the correct version of winutils for the associated Spark from <https://github.com/cdarlint/winutils/> into the spark bin folder.
 6. Optional: Create C:\tmp\hive and in your new bin folder, open Command Window as Admin and run winutils.exe chmod -R 777 C:\tmp\hive
 7. Set System Environment Variables:
-    - SPARK_HOME = C:\spark-3.1.1-bin-hadoop2.7
-    - HADOOP_HOME = C:\spark-3.1.1-bin-hadoop2.7
+    - SPARK_HOME = C:\spark-3.2.1-bin-hadoop3.2
+    - HADOOP_HOME =C:\spark-3.2.1-bin-hadoop3.2
     - Path - add %SPARK_HOME%\bin
 
 ### Verify Spark using Scala
