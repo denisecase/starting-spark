@@ -23,7 +23,7 @@
 - Python (includied with Miniconda or Anaconda) 
 
 ```PowerShell
-choco install 7-zip -y
+choco install 7zip.install -y
 choco install openjdk -y
 choco install miniconda3 --params="/AddToPath:1" -y
 ```
