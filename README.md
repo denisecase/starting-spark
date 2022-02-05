@@ -17,14 +17,14 @@
 
 - [Basic Setup for Big Data](https://github.com/denisecase/basic-setup-for-bigdata)
 
-### Verify Prerequisities are installed (included above)
+### Verify Prerequisities are installed (some included above)
 
 - JDK 8 or better
 - Python (includied with Miniconda or Anaconda) 
 
 ```PowerShell
+choco install 7-zip -y
 choco install openjdk -y
-choco install 7zip -y
 choco install miniconda3 --params="/AddToPath:1" -y
 ```
 
