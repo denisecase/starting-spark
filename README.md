@@ -42,14 +42,16 @@ Important: Make sure there is only one Java in your path - both system and user 
 Spark is written in Scala (a new language for the JVM), but you can interact with it using Scala - or Python. 
 
 1. Read: <https://spark.apache.org/>
-2. Download Spark: <https://spark.apache.org/downloads.html> (e.g., to Downloads folder).
-3. Use 7zip to extract, extract again. 
-4. Move so you have C:\spark-3.2.1-bin-hadoop3.2\bin
-5. Download the correct version of winutils for the associated Spark from <https://github.com/cdarlint/winutils/> into the spark bin folder. 
-6. Recommended: Star the repo to say thanks for providing this helpful service. 
-7. Set System Environment Variables - be sure to match the version you actually download.
-    - SPARK_HOME = C:\spark-3.2.1-bin-hadoop3.2
-    - HADOOP_HOME =C:\spark-3.2.1-bin-hadoop3.2
+2. View Spark Downloads: <https://spark.apache.org/downloads.html> (e.g., to Downloads folder). 
+3. NEW: REVERT BACK TO "3.1.2 (Jun 01 2021)" in the dropdown box before downloading. 
+4. Use 7zip to extract, extract again. 
+5. Move so you have C:\spark-3.1.2-bin-hadoop3.2\bin - MUST BE THE EARLIER 3.1.2 (not 3.2.1).
+6. View the different versions of winutils for Spark from <https://github.com/cdarlint/winutils/> and download into your spark bin folder. 
+7. UPDATE: Download 3.2.0 from https://github.com/cdarlint/winutils/blob/master/hadoop-3.2.0/bin/winutils.exe
+8. Recommended: Star the repo to say thanks for providing this helpful service. 
+9. Set System Environment Variables - be sure to match the version you actually download.
+    - SPARK_HOME = C:\spark-3.1.2-bin-hadoop3.2
+    - HADOOP_HOME =C:\spark-3.1.2-bin-hadoop3.2
     - Path - add %SPARK_HOME%\bin
 
 ### Verify Spark using Scala
