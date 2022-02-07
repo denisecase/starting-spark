@@ -144,6 +144,10 @@ wordCounts.collect()
 
 ---
 
+## See Also
+
+- [pip vs conda](https://pythonspeed.com/articles/conda-vs-pip/)
+
 ## Terms
 
 - Resilient Distributed Dataset (RDD) - a distributed collection of items
