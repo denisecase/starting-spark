@@ -71,6 +71,8 @@ conda install -c conda-forge pyspark
 
 If you see a WARN about trying to compute pageszie, just hit ENTER. This command works in Linux, but not in Windows. 
 
+Try Java 11 - not Java 17.
+
 ---
 
 ## Experiment with Spark & Python
