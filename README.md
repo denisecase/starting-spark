@@ -19,12 +19,12 @@
 
 ### Verify Prerequisities are installed (some included above)
 
-- JDK 8 or better
+- JDK 11 - 17 may not work?
 - Python (includied with Miniconda or Anaconda) 
 
 ```PowerShell
 choco install 7zip.install -y
-choco install openjdk -y
+choco install openjdk11 -y
 choco install miniconda3 --params="/AddToPath:1" -y
 ```
 
@@ -34,6 +34,8 @@ Verify:
 java --version
 python --version
 ```
+
+Important: Make sure there is only one Java in your path - both system and user path. 
 
 ### Install Spark locally
 
