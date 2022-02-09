@@ -50,9 +50,12 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 7. UPDATE: Download 3.2.0 from https://github.com/cdarlint/winutils/blob/master/hadoop-3.2.0/bin/winutils.exe
 8. Recommended: Star the repo to say thanks for providing this helpful service. 
 9. Set System Environment Variables - be sure to match the version you actually download.
-    - SPARK_HOME = C:\spark-3.1.2-bin-hadoop3.2
-    - HADOOP_HOME =C:\spark-3.1.2-bin-hadoop3.2
+    - JAVA_HOME = C:\Program Files\OpenJDK\openjdk-11.0.13_8
+    - HADOOP_HOME = C:\spark-3.1.2-bin-hadoop3.2
+    - SPARK_HOME =  C:\spark-3.1.2-bin-hadoop3.2
     - Path - add %SPARK_HOME%\bin
+    - Path - add %HADOOP_HOME%\bin
+    - Path - verify there is exactly one path to java bin in both user and system paths. 
 
 ### Verify Spark using Scala
 
