@@ -186,6 +186,7 @@ wordCounts.collect()
 ## Python: Conda Environments (Do not recommend pip as we do not include instructions for pip virtual environments)
 
 - [pip vs conda](https://pythonspeed.com/articles/conda-vs-pip/)
+- [SO pip / conda](https://stackoverflow.com/questions/20994716/what-is-the-difference-between-pip-and-conda?rq=1)
 - [MManage your Python Virtual Environment with Conda](https://towardsdatascience.com/manage-your-python-virtual-environment-with-conda)
 - When we install Python with Anaconda or Miniconda, it automatically creates the Python 'base' environment. 
 - We can create additional conda environments as needed. 
