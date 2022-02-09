@@ -150,9 +150,31 @@ wordCounts.collect()
 
 ---
 
-## See Also
+## Python: Conda Environments
 
 - [pip vs conda](https://pythonspeed.com/articles/conda-vs-pip/)
+- [MManage your Python Virtual Environment with Conda](https://towardsdatascience.com/manage-your-python-virtual-environment-with-conda)
+
+When we install Python with Anaconda or Miniconda, it automatically creates the Python 'base' environment. 
+We can create additional conda environments as needed. 
+The current environment is used anytime we invoke Python, until we explicitly change the enviroment. 
+Conda and Pip handle environments differently. Understand their use before mixing. 
+
+Explore Conda Environments
+
+```PowerShell
+conda info
+conda env list
+```
+
+Review conda env information at (change to your username):
+
+```
+C:\Users\dcase\miniconda3\envs
+C:\Users\dcase\.conda\envs
+C:\Users\dcase\AppData\Local\conda\conda\envs
+```
+
 
 ## Terms
 
