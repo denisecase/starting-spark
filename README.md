@@ -69,8 +69,34 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 1. The new /bin includes PySpark. 
 2. In PS as Admin, run ```pyspark``` to launch Spark with Python.  You should get a Python prompt >>>.
 3. Quit a Python window with the quit() function. 
-4. If you DON'T see a version after the command above, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run: `conda install -c conda-forge pyspark`
+4. SHOULD NOT BE NEEDED: If you DON'T see a version after the command above, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run: `conda install -c conda-forge pyspark`
 
+### Run a PySpark Script
+
+Try to run an example: 
+
+PS C:\spark-3.1.2-bin-hadoop3.2>  bin/spark-submit examples/src/main/python/wordcount.py README.md
+
+Yeiles this: 
+
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/C:/spark-3.1.2-bin-hadoop3.2/jars/spark-unsafe_2.12-3.1.2.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/02/09 06:28:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+log4j:WARN No appenders could be found for logger (org.apache.spark.util.ShutdownHookManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+
+Solution: Manage App Execution Aliases - Turn Off Windows Python
+
+- Start / type “Manage App Execution Aliases” / Turn off “Python” options
+
+Conclusion: Python is not very self-contained. Many languages we can install, create apps, and delete as needed. 
+Python is pervasive which violates a variety of solid principles. 
+We will contine our exploration of Python with Java and enjoy the benefits of encapsualtion and specification-driven development. 
 
 ### Warnings
 
