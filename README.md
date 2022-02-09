@@ -175,7 +175,6 @@ C:\Users\dcase\.conda\envs
 C:\Users\dcase\AppData\Local\conda\conda\envs
 ```
 
-
 ## Terms
 
 - Resilient Distributed Dataset (RDD) - a distributed collection of items
@@ -192,7 +191,6 @@ C:\Users\dcase\AppData\Local\conda\conda\envs
 - Cluster manager (built-in, YARN, Mesos, or Kubernetes)
 - Spark executor (usually one per worker node)
 - Deployment modes (local, standalone, YARN, etc.)
-
 
 ## Resources
 
