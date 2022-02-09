@@ -104,6 +104,17 @@ Conclusion: Python is not very self-contained. Many languages we can install, cr
 Python is pervasive which violates a variety of solid principles. 
 We will contine our exploration of Python with Java and enjoy the benefits of encapsualtion and specification-driven development. 
 
+## Spark Scala Examples
+
+Read the example code. What examples are avaiable? What arguments are needed?
+
+```
+.\bin\run-example SparkPi
+.\bin\run-example JavaWordCount
+.\bin\run-example JavaWordCount README.md
+```
+
+
 ### Warnings
 
 If you see a WARN about trying to compute pageszie, just hit ENTER. This command works in Linux, but not in Windows. 
