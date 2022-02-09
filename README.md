@@ -90,9 +90,13 @@ log4j:WARN No appenders could be found for logger (org.apache.spark.util.Shutdow
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
 
-Solution: Manage App Execution Aliases - Turn Off Windows Python
+Solution: Copy log4j template to properties
 
-- Start / type “Manage App Execution Aliases” / Turn off “Python” options
+- Copy conf/log4j.properties.template to conf/log4j.properties
+
+Solution: Manage App Execution Aliases
+
+- Start / type “Manage App Execution Aliases” / Manage “Python” options
 
 Conclusion: Python is not very self-contained. Many languages we can install, create apps, and delete as needed. 
 Python is pervasive which violates a variety of solid principles. 
