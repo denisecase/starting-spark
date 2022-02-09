@@ -48,9 +48,10 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 4. Use 7zip to extract, extract again. 
 5. Move so you have C:\spark-3.1.2-bin-hadoop3.2\bin - MUST BE THE EARLIER 3.1.2 (not 3.2.1).
 6. View the different versions of winutils for Spark from <https://github.com/cdarlint/winutils/> and download into your spark bin folder. 
-7. UPDATE: Download 3.2.0 from https://github.com/cdarlint/winutils/blob/master/hadoop-3.2.0/bin/winutils.exe
-8. Recommended: Star the repo to say thanks for providing this helpful service. 
-9. Set System Environment Variables - be sure to match the version you actually download.
+7. UPDATE: Download 3.2.0 winutils.exe from https://github.com/cdarlint/winutils/blob/master/hadoop-3.2.0/bin/winutils.exe into spark bin
+8. UPDATE: Download 3.2.0 hadoop.dll from https://github.com/cdarlint/winutils/blob/master/hadoop-3.2.0/bin/hadoop.dll into spark bin
+9. Recommended: Star the repo to say thanks for providing this helpful service. 
+10. Set System Environment Variables - be sure to match the version you actually download.
     - JAVA_HOME = C:\Program Files\OpenJDK\openjdk-11.0.13_8
     - HADOOP_HOME = C:\spark-3.1.2-bin-hadoop3.2
     - SPARK_HOME =  C:\spark-3.1.2-bin-hadoop3.2
