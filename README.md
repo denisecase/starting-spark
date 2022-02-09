@@ -69,11 +69,8 @@ Spark is written in Scala (a new language for the JVM), but you can interact wit
 1. The new /bin includes PySpark. 
 2. In PS as Admin, run ```pyspark``` to launch Spark with Python.  You should get a Python prompt >>>.
 3. Quit a Python window with the quit() function. 
-4. If you don't see a version after the command above, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run:
+4. If you DON'T see a version after the command above, follow instructions at https://anaconda.org/conda-forge/pyspark. Open Anaconda prompt and run: `conda install -c conda-forge pyspark`
 
-```Anaconda
-conda install -c conda-forge pyspark
-```
 
 ### Warnings
 
@@ -154,24 +151,18 @@ wordCounts.collect()
 
 ---
 
-## Python: Conda Environments
+## Python: Conda Environments (Do not recommend pip as we do not include instructions for pip virtual environments)
 
 - [pip vs conda](https://pythonspeed.com/articles/conda-vs-pip/)
 - [MManage your Python Virtual Environment with Conda](https://towardsdatascience.com/manage-your-python-virtual-environment-with-conda)
-
-When we install Python with Anaconda or Miniconda, it automatically creates the Python 'base' environment. 
-We can create additional conda environments as needed. 
-The current environment is used anytime we invoke Python, until we explicitly change the enviroment. 
-Conda and Pip handle environments differently. Understand their use before mixing. 
-
-Explore Conda Environments
-
-```PowerShell
-conda info
-conda env list
-```
-
-Review conda env information at (change to your username):
+- When we install Python with Anaconda or Miniconda, it automatically creates the Python 'base' environment. 
+- We can create additional conda environments as needed. 
+- The current environment is used anytime we invoke Python, until we explicitly change the enviroment. 
+- Conda and pip handle environments differently. Understand their use before mixing. 
+- Conda may show a warning, but if installation instructions were followed, there will not be an error. 
+- Optional: To explore more about what conda does for us and where the information is stored, try the following. 
+- Optional: Explore Conda Environments with `conda info` for current or `conda env list` to see all. 
+- Optional: Review conda env information at (change to your username):
 
 ```
 C:\Users\dcase\miniconda3\envs
@@ -179,19 +170,19 @@ C:\Users\dcase\.conda\envs
 C:\Users\dcase\AppData\Local\conda\conda\envs
 ```
 
-## Terms
+## A Few Terms
 
 - Resilient Distributed Dataset (RDD) - a distributed collection of items
-- RDD actions (return values)
-- RDD transformations (return pointers to new RDD)
+- DataFrame, DataSet - abstractions on top of RDD
+- Operations:
+   - actions (required to emit values)
+   - transformations (return pointers to new RDD)
 - RDD transformations list ([link](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations))
-
 - Application - custome driver program + executors
 - SparkSession - access to Spark (interactive or created in an app)
 - Job - parallel computation with tasks spawned by Spark action (e.g., save(), collect())
 - Stage - set of tasks
 - Task - unit of work sent to Spark executor
-
 - Cluster manager (built-in, YARN, Mesos, or Kubernetes)
 - Spark executor (usually one per worker node)
 - Deployment modes (local, standalone, YARN, etc.)
