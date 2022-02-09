@@ -77,8 +77,9 @@ Try to run an example:
 
 PS C:\spark-3.1.2-bin-hadoop3.2>  bin/spark-submit examples/src/main/python/wordcount.py README.md
 
-Yeiles this: 
+Yeilds this: 
 
+```
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/C:/spark-3.1.2-bin-hadoop3.2/jars/spark-unsafe_2.12-3.1.2.jar) to constructor java.nio.DirectByteBuffer(long,int)
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
@@ -89,6 +90,7 @@ Python was not found; run without arguments to install from the Microsoft Store,
 log4j:WARN No appenders could be found for logger (org.apache.spark.util.ShutdownHookManager).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+```
 
 Solution: Copy log4j template to properties
 
