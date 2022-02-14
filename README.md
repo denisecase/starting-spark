@@ -80,7 +80,7 @@ Try to run an example, open PS as Admin in the following location and run this c
 
 C:\spark-3.1.2-bin-hadoop3.2>  `bin/spark-submit examples/src/main/python/wordcount.py README.md`
 
-Recommendation: 
+Required: 
 
 Enter miniconda directory and create a copy of python.exe renamed as python3.exe.  Spark requires the python3 command name.
 
@@ -92,7 +92,7 @@ Solution provided by:
 - President – Northwest Gaming
 - She/Her
 
-Option: Copy log4j template to properties
+Required: Copy log4j template to properties
 
 - Copy conf/log4j.properties.template to conf/log4j.properties
 
